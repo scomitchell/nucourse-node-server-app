@@ -8,6 +8,14 @@ export default function ReviewRoutes(app) {
         res.json(newReview);
     });
 
+    app.put("/api/reviews/:reviewId", async (req, res) => {
+        const { reviewId } = req.params;
+        const reviewUpdates = req.body;
+
+        const status = await dao.updateReview(reviewId, reviewUpdates);
+        res.send(status);
+    });
+
     app.delete("/api/reviews/:reviewId", async (req, res) => {
         const { reviewId } = req.params;
         const status = await dao.deleteReview(reviewId);

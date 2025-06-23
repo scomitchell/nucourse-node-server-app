@@ -28,5 +28,5 @@ export const deleteReview = (reviewId) => {
 }
 
 export const updateReview = (reviewId, review) => {
-    model.updateOne({ _id: userId }, { $set: review });
+    return model.updateOne({ _id: reviewId }, { $set: review });
 }
