@@ -24,11 +24,11 @@ export default function CourseRoutes(app) {
         res.json(course);
     });
 
-    app.put("/api/courses/:courseId", async (req, res) => {
-        const { courseId } = req.params;
+    app.put("/api/courses/:courseNum", async (req, res) => {
+        const { courseNum } = req.params;
         const courseUpdates = req.body;
 
-        const status = await dao.updateCourse(courseId, courseUpdates);
+        const status = await dao.updateCourse(courseNum, courseUpdates);
         res.send(status);
     });
 

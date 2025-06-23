@@ -20,8 +20,8 @@ export const findCourseByPartialTitle = (partialTitle) => {
     return model.find({ title: { $regex: regex } });
 }
 
-export const updateCourse = (courseId, course) => {
-    return model.updateOne({ _id: courseId }, { $set: course });
+export const updateCourse = (courseNum, course) => {
+    return model.updateOne({ number: courseNum }, { $set: course });
 }
 
 export const deleteCourse = (courseId) => {
